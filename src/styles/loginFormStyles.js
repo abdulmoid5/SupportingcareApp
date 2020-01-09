@@ -31,7 +31,8 @@ export default StyleSheet.create({
     buttonTextStyle: {
         color: 'white',
         fontSize: 18,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        fontWeight: 'bold'
     },
     forgotPasswordButtonStyle: {
         alignSelf: 'center',
@@ -40,5 +41,26 @@ export default StyleSheet.create({
     forgotPasswordText: {
         color: '#A1A1A1',
         fontSize: 18
+    },
+    checkboxRowStyle: { 
+        width: '70%', 
+        display: 'flex', 
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 25,
+        marginBottom: 10,
+        // marginBottom: 5
+    },
+    checkboxText: {
+        fontSize: 14,
+        color: 'black',
+        marginLeft: 5
+    },
+    registeredText: {
+        marginTop: '40%',
+        alignSelf: 'center',
+        color: 'black',
+        fontSize: 24,
+        fontWeight: 'bold'
     }
 })

@@ -34,6 +34,7 @@ class LoginForm extends React.Component {
 
                 <TouchableOpacity
                     style={styles.loginButtonStyle}
+                    onPress={() => this.props.navigation.navigate('Dashboard')}
                 >
                     <Text style={styles.buttonTextStyle}>
                         LOGIN
@@ -43,6 +44,7 @@ class LoginForm extends React.Component {
 
                 <TouchableOpacity
                     style={styles.forgotPasswordButtonStyle}
+                    onPress={() => this.props.navigation.navigate('ResetPasswordScreen')}
                 >
                     <Text style={styles.forgotPasswordText}>
                         Forgot your password?

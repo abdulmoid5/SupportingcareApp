@@ -15,7 +15,8 @@ export default StyleSheet.create({
         fontSize: 32,
         textTransform: 'uppercase',
         color: 'black',
-        marginTop: 50
+        marginTop: 50,
+        fontWeight: 'bold'
     },
     descLoginText: {
         fontSize: 24,

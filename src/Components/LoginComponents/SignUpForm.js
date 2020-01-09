@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, TextInput, TouchableOpacity, CheckBox } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import CheckBox from 'react-native-check-box'
 
 import styles from '../../styles/loginFormStyles'
 
@@ -9,10 +10,22 @@ class LoginForm extends React.Component {
         lastName: "",
         email: "",
         mobile: "",
-        password: ""
+        password: "",
+        isGDPRSelected: false,
+        isTermsSelected: false
     }
     onChangeText = (key, val) => {
         this.setState({ [key]: val })
+    }
+    handleGDPR = () => {
+        this.setState({
+            isGDPRSelected: !this.state.isGDPRSelected
+        })
+    }
+    handleTerms = () => {
+        this.setState({
+            isTermsSelected: !this.state.isTermsSelected
+        })
     }
     render() {
         return (
@@ -61,14 +74,24 @@ class LoginForm extends React.Component {
                     onChangeText={(val) => this.onChangeText('mobile', val)}
                 />
 
-                <View>
-                    <CheckBox 
-                            checked={true}
+                <View style={styles.checkboxRowStyle}>
+                    <CheckBox
+                        onClick={this.handleGDPR}
+                        isChecked={this.state.isGDPRSelected}
                     />
+                    <Text style={styles.checkboxText}>GDPR</Text>
+
+                    <CheckBox
+                        onClick={this.handleTerms}
+                        isChecked={this.state.isTermsSelected}
+                        style={{marginLeft: 40}}
+                    />
+                    <Text style={styles.checkboxText}>Terms & Conditions</Text>
                 </View>
 
                 <TouchableOpacity
                     style={styles.loginButtonStyle}
+                    onPress={() => this.props.navigation.navigate('RegistrationSuccessfulScreen')}
                 >
                     <Text style={styles.buttonTextStyle}>
                         REGISTER

@@ -1,16 +1,37 @@
 import React from 'react'
 import {
-    View, Text
+    View, Text, ScrollView, Image, TouchableOpacity
 } from 'react-native'
+
+import styles from '../../styles/loginStyles'
+
+import ResetPasswordForm from '../../Components/LoginComponents/ResetPasswordForm'
 
 class ResetPasswordScreen extends React.Component {
     static navigationOptions = {
-        header: null
+        headerShown: false
     }
     render() {
         return (
-            <View>
-                <Text>ResetPasswordScreen</Text>
+            <View style={styles.container}>
+                <ScrollView contentContainerStyle={{ flex: 1 }}>
+                    <View style={styles.subContainer}>
+                        <Image
+                            style={styles.logoStyle}
+                            source={require('../../images/supporting_care_logo.png')}
+                        />
+
+                        <Text style={styles.loginText}>FORGOT YOUR PASSWORD?</Text>
+                        <Text style={styles.descLoginText}>
+                                Please enter your email address
+                        </Text>
+
+                        <ResetPasswordForm
+                            navigation={this.props.navigation}
+                        />
+
+                    </View>
+                </ScrollView>
             </View>
         )
     }
